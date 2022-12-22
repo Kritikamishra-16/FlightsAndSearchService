@@ -1,0 +1,4 @@
+//all the files and folders that we dont want to expose on git repository
+
+node_modules/
+.env
