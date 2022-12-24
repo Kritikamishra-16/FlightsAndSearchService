@@ -6,7 +6,7 @@ class CityService{
         this.cityRepository=new CityRepository();
     }
 
-    async createCity(){
+    async createCity(data){
         try{
             //we will get data here in this data all the properties require to create a city is present here so we just call the repository function
             const city= await this.cityRepository.createCity(data);
