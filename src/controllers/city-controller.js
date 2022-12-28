@@ -107,7 +107,7 @@ const update =async (req,res)=>{
 
 const getAll= async (req,res) =>{
     try{
-        const cities=await cityService.getAllCities();
+        const cities=await cityService.getAllCities(req.query); //data is coming in query params not in url params i.e. req.params
         return res.status(200).json({
             data: cities,
             success: true,
