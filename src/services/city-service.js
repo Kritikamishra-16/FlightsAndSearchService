@@ -8,7 +8,7 @@ class CityService{
 
     async createCity(data){
         try{
-            //we will get data here in this data all the properties require to create a city is present here so we just call the repository function
+            //we will get data here from {controllers(which have access to all (req,res) objects) } In this data all the properties require to create a city is present here so we just call the repository function
             const city= await this.cityRepository.createCity(data);
             return city;
         }catch(error){
@@ -39,8 +39,18 @@ class CityService{
 
     async getCity(cityId){
         try{
-            const city=this.cityRepository.getCity(cityId);
+            const city=await this.cityRepository.getCity(cityId);
             return city;
+        }catch(error){
+            console.log("Something went wrong at service layer");
+            throw {error};
+        }
+    }
+
+    async getAllCities(){
+        try{
+            const cities=await this.cityRepository.getAllCities();
+            return cities;
         }catch(error){
             console.log("Something went wrong at service layer");
             throw {error};

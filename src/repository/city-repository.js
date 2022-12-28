@@ -1,5 +1,6 @@
 const { City }= require('../models/index');
 
+//this contains all the query functions to access database
 class CityRepository {
 
     async createCity({name}){   //destructuring the object to use it directly
@@ -52,6 +53,16 @@ class CityRepository {
             return city;
         }catch(error){
             console.log("Something went wrong in the repository layer");
+            throw {error};
+        }
+    }
+
+    async getAllCities(){
+        try{
+            const cities =await City.findAll();
+            return cities;
+        }catch(error){
+            console.log("Something went wrong at repository layer");
             throw {error};
         }
     }
