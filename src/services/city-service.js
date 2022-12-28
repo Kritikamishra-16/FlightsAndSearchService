@@ -1,3 +1,4 @@
+//its role is to contain all the business logic
 const {CityRepository} =require('../repository/index');
 
 class CityService{

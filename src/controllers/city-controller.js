@@ -1,3 +1,5 @@
+//role of controller is to get the request pass it to the backend and when the backend processes the request pass json object to the frontend.
+
 const {CityService}=require('../services/index');
 
 /**

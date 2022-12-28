@@ -1,7 +1,8 @@
+//Its role is to contains all the query functions to access database
+
 const { City }= require('../models/index');
 const { Op }= require('sequelize');
 
-//this contains all the query functions to access database
 class CityRepository {
 
     async createCity({name}){   //destructuring the object to use it directly
