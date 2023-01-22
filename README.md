@@ -39,3 +39,14 @@
   ### Airport-> id, name, address, city_id, created_at, updated_at
       Relationship ->City has many airports and an airport belongs to a city(one to many)
 
+
+```
+Using this command we made Airport models:
+npx sequelize model:generate --name Airport --attributes name:String,address:String,cityId:integer
+
+Using this comand we can create seeders(starting inputs) file:
+npx sequelize seed:generate --name add-airports
+
+Using this command all seeders file will startgetting seeded
+npx sequelize db:seed:all
+```

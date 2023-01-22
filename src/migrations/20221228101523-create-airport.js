@@ -22,7 +22,7 @@ module.exports = {
         references: {
           //which model it belongs to
           model: 'Cities',
-          //which column of the model it is refering to (ths fk of airport model to pk of city model)
+          //which column of that model it is refering to (this fk of airport model to pk of city model)
           key: 'id',
           as: 'cityId'
         },

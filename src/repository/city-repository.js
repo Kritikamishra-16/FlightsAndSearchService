@@ -61,7 +61,7 @@ class CityRepository {
 
     async getAllCities(filter){  //filter object can be empty parameter also 
         try{
-            if(filter.name)
+            if(filter.name) //if we have a query param filter
             {
                 const cities = await City.findAll({
                     where:{
@@ -72,7 +72,7 @@ class CityRepository {
                 });
                 return cities
             }
-            //if empty return all cities
+            //if filter will be empty return all cities
             const cities =await City.findAll();
             return cities;
         }catch(error){
